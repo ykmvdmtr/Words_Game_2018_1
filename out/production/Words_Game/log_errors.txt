@@ -1,0 +1,909 @@
+Fri Nov 30 00:39:19 MSK 2018
+java.nio.file.NoSuchFileException: /home/dmitry/IdeaProjects/Words_Gam/src/word_rus.txt
+____________________
+Fri Nov 30 01:00:10 MSK 2018
+java.io.FileNotFoundException: home/dmitry/IdeaProjects/Words_Game/src/rules.txt (Нет такого файла или каталога)
+____________________
+Sun Dec 02 19:58:58 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 19:58:58 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 19:58:58 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 19:58:58 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 19:58:58 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 19:58:58 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 19:58:58 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 19:59:03 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:00:41 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:00:41 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:00:41 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:00:41 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:00:41 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:00:41 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:00:41 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:00:50 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:01:52 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:01:52 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:01:52 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:01:52 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:01:52 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:01:52 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:01:52 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:01:56 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:01:56 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:01:56 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:01:56 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:01:56 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:01:56 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:01:56 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:01:56 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:01:59 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:12 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:12 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:12 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:12 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:12 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:12 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:12 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:17 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:17 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:17 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:17 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:17 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:17 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:17 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:17 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:45 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:45 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:45 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:45 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:45 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:45 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:45 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:45 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:45 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:52 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:04:52 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:33 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:33 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:33 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:33 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:33 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:33 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:33 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:37 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:43 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:43 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:43 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:43 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:43 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:43 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:43 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:43 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:47 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:47 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:47 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:47 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:47 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:47 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:47 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:47 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:47 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:52 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:06:52 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:20:03 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:20:03 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:20:03 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:20:03 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:20:03 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:20:03 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:20:03 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:20:10 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:20:36 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:20:36 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:23:00 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:23:00 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:23:00 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:23:00 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:23:00 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:23:00 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:23:00 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:23:13 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:23:13 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:23:13 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:23:13 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:23:13 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:23:13 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:23:13 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:23:13 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:23:18 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:23:18 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:23:18 MSK 2018
+java.lang.NullPointerException
+____________________
+Sun Dec 02 20:23:18 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:04:54 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:04:54 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:04:54 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:04:54 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:04:54 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:04:54 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:04:54 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:05:00 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:05:12 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:05:12 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:05:12 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:05:12 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:05:12 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:05:12 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:05:12 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:05:12 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:05:18 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:05:18 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:06:23 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:06:23 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:06:23 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:06:23 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:06:23 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:06:23 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:06:23 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:08:04 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:08:47 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:08:47 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:08:47 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:08:47 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:08:47 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:11:02 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:11:02 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:11:02 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:11:02 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:11:02 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:11:02 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:11:02 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:11:18 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:13:06 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:13:31 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:13:34 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:13:35 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:13:35 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:13:36 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:13:37 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:15:14 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:16:24 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:17:53 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:17:53 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:17:53 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:17:53 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:17:53 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:29:20 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:29:20 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:29:20 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:29:20 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:29:20 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:29:20 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:29:20 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 11:29:23 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:12 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:12 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:12 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:12 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:12 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:12 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:12 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:14 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:14 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:14 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:14 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:14 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:14 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:14 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:14 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:27 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:27 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:27 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:27 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:27 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:27 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:27 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:27 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:27 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:31 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:31 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:31 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:31 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:31 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:31 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:31 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:31 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:31 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:31 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:35 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:35 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:35 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:35 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:53 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:53 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:53 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:53 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:53 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:53 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:53 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:53 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:53 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:53 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:53 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:57 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:02:57 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:17:30 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:17:30 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:17:30 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:17:30 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:17:30 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:17:30 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:17:30 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:17:36 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:17:36 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:25:57 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:25:57 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:25:57 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:25:57 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:25:57 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:25:57 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:25:57 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:26:00 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:26:55 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:26:55 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:26:55 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:26:55 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:26:55 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:26:55 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:26:55 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:26:59 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:26:59 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:26:59 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:26:59 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:26:59 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:26:59 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:26:59 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:26:59 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:01 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:13 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:13 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:13 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:13 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:13 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:13 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:13 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:13 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:13 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:16 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:16 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:16 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:16 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:16 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:16 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:16 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:16 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:16 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:16 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:18 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:47 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:47 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:47 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:47 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:47 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:47 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:47 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:47 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:47 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:50 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:57 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:57 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:57 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:57 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:57 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:57 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:57 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:57 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:57 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:57 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:57 MSK 2018
+java.lang.NullPointerException
+____________________
+Mon Dec 03 15:27:57 MSK 2018
+java.lang.NullPointerException
+____________________
