@@ -80,7 +80,7 @@ class Field {
                 FIELD[i][j] = def;
         }
         String start_word = Random_Word.get_rnd_wrd(size);
-        //alredy_on[0] = start_word;
+        alredy_on[0] = start_word;
         char[] start_word_ch = start_word.toCharArray();
         int temp = (size%2 == 0) ? (size/2) : ((size/2) + 1); // номер строки
         for (i = 1; i < FIELD.length; i++)
@@ -113,8 +113,8 @@ class Field {
             //System.out.println(new_word);
             if (!new_word.equals(" ")) {
                 System.out.println((char)27 + "[32mНа поле появилось новое слово: " + new_word + (char)27 + "[0m");
-                alredy_on[count_word] = new_word;
                 count_word ++;
+                alredy_on[count_word] = new_word;
                 /*for (String str : alredy_on)
                     System.out.println(str);*/
                 // добавляем все игроку
@@ -130,7 +130,8 @@ class Field {
         show_field();
         return resp;
     }
-    private static boolean valid_param(String field, char w) {
+    private static boolean valid_param(String field, char w) { // проводим собственно валидацию введеныых параметров
+        // можно ли поставить на это место, честная ли игра?
         boolean resp = false;
 
         Pattern p = Pattern.compile("^(.)(.)$");
@@ -294,41 +295,59 @@ class Field {
         // обнуляем все переменные
         for (char ch: temp_ch_ar)
             ch = ' ';
-
-        boolean flag = true;
-        for (int i = 1; i < FIELD.length && flag; i++ ) {
-            for (int j = 1; j < FIELD.length && flag; j++) {
-                // для каждой точки - обнуляем массив
-                for (int a = 0; a < temp_ch_ar.length; a++)
+        
+        boolean is_found = true;
+        // проходимся по всему полю
+        for (int i = 1; i < FIELD.length && is_found; i++) {
+            for (int j = 1; j < FIELD.length; j++) {
+                for (int a = 0; a < temp_ch_ar.length; a++) // обнуляем временный массив слова
                     temp_ch_ar[a] = ' ';
-                if (FIELD[i][j] != def) { // есть ли смысл вообще проверять
-                    //System.out.println("Есть, конечно");
-                    //System.out.println(FIELD[i][j]);
-                    //temp_ch_ar[temp_ch_ar.length] = FIELD[i][j];
-                    for (int k = i, tmp = 0; k < FIELD.length; k++, tmp++) {
-                        if (FIELD[k][j] != def){
-                            //System.out.println("Ну, допустим не равно");
-                            temp_ch_ar[tmp] = FIELD[k][j];
-                        } else {
-                            break;
-                        }
+                // проходимся по вертикальным прямым
+                for (int k = i, temp = 0; k < FIELD.length; k++, temp++) {
+                    if (FIELD[k][j] != def) {
+                        temp_ch_ar[temp] = FIELD[k][j];
+                    } else {
+                        break;
                     }
-                    if (is_contained_inList(temp_ch_ar)) {
-                        // да, есть новое слово
-                        String temp_word = new String(temp_ch_ar);
-
-                        Pattern p = Pattern.compile("^([а-яА-Я]+)");
-                        Matcher m = p.matcher(temp_word);
-                        if (m.find())
-                            new_word = m.group(1);
-                        //System.out.println(new_word);
-                        flag = false;
-                    }
-                } else {
-                    continue;
                 }
+                if (is_contained_inList(temp_ch_ar)) { // если действительно слово - то запоминаем его и выходим отсюда
+                    // да, есть новое слово
+                    String temp_word = new String(temp_ch_ar);
+
+                    Pattern p = Pattern.compile("^([а-яА-Я]+)");
+                    Matcher m = p.matcher(temp_word);
+                    if (m.find())
+                        new_word = m.group(1);
+                    //System.out.println(new_word);
+                    is_found = false;
+                    break;
+                }
+                // если не нашли по вертикали - ищем по горизонтали от этйо буквы
+                for (int b = 0; b < temp_ch_ar.length; b++) // обнуляем временный массив слова
+                    temp_ch_ar[b] = ' ';
+                for (int l = j, tmp = 0; l < FIELD.length; l++, tmp++ ) {
+                    if (FIELD[i][l] != def) {
+                        temp_ch_ar[tmp] = FIELD[i][l];
+                    } else {
+                        break;
+                    }
+                }
+                if (is_contained_inList(temp_ch_ar)) { // если действительно слово - то запоминаем его и выходим отсюда
+                    // да, есть новое слово
+                    String temp_word = new String(temp_ch_ar);
+
+                    Pattern p = Pattern.compile("^([а-яА-Я]+)");
+                    Matcher m = p.matcher(temp_word);
+                    if (m.find())
+                        new_word = m.group(1);
+                    //System.out.println(new_word);
+                    is_found = false;
+                    break;
+                }
+
             }
         }
+        // если не нашлось по вертикали - проверяем по горизонтали
 
 
         return new_word;
@@ -407,6 +426,7 @@ class Player {
     private String name;
     private int count_of_wds = 0;
     private int len_of_wds = 0;
+   // private  int[] curr_val = new int[2]; // на какое место добавил последний раз игроу [ 3, 2]
 
     Player(String name) {
         this.name = name;
@@ -424,6 +444,14 @@ class Player {
     }
     String getName() { return this.name;}
 
+    /*void setCurr_val(int i, int j) {
+        curr_val[0] = i;
+        curr_val[1] = j;
+    }
+    int[] getCurr_val() {
+        return this.curr_val;
+    }
+*/
 
 }
 // класс - обработчик ошибок
