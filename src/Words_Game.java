@@ -17,9 +17,8 @@ public class Words_Game {
         Field.show_field_startonly();
         while(!Field.get_status()) { // Event Loop
             Help.set_val(player1);
-           // System.out.println(player1.len_of_wds);
-            Help.set_val(player2);
-           // System.out.println(player2.len_of_wds);
+            if (!Field.get_status())
+                Help.set_val(player2);
         }
         Help.the_end(player1, player2);
 
@@ -34,7 +33,6 @@ class Word_List {
         List<String> words_list = new ArrayList<>();
 
         try (BufferedReader br = Files.newBufferedReader(Paths.get(path_list))) {
-            String str;
             words_list = br.lines().collect(Collectors.toList());
 
         } catch (IOException e) {
@@ -54,7 +52,8 @@ class Word_List {
 
 class Field {
     private static boolean THE_END = false; // все поля заполнены ??
-    private static int size = 6; // размер поля
+    private static int max_count_wd = 2;
+    private static int size = 9; // размер поля
     private static char[][] FIELD = new char[size+1][size+1]; // создали само поле; +2 - чтобы вывести окантовку поля
     private static char[] alfs = new char[size]; // здесь будут все буквы полей
     private static char def = ' '; // дефолнтно, чем заполняем
@@ -66,7 +65,7 @@ class Field {
     private static void make_field() {
         int i; // счетчик
         // окантовка поля
-        int alf = (int)'A';
+        int alf = (int)'А';
         int num = (int)'1';
 
         for (i = 1; i < size+1; i++, alfs[i-2] = (char)alf, alf++)
@@ -81,7 +80,31 @@ class Field {
         }
         String start_word = Random_Word.get_rnd_wrd(size);
         alredy_on[0] = start_word;
+        count_word++;
         char[] start_word_ch = start_word.toCharArray();
+        // также, например, если сложное слово: автосалон
+        // то нам надо запихнуть уже в имеющиеся слова слова авто и салон
+        char[] temp_ch_arr = new char [start_word_ch.length]; // формируем массив временный
+        for (int k = 1; k < start_word_ch.length; k++) {
+            for (int tmp = 0; tmp < temp_ch_arr.length; tmp ++) // чистим временный массив для новой буквы
+                temp_ch_arr[tmp] = ' ';
+            for (int l = k, temp = 0; l < start_word_ch.length; l++, temp++) {
+                temp_ch_arr[temp] = start_word_ch[l];
+                if (is_contained_inList(temp_ch_arr)) {
+                    String temp_word = new String(temp_ch_arr);
+                    String new_word = "";
+
+                    Pattern p = Pattern.compile("^([а-яА-Я]+)");
+                    Matcher m = p.matcher(temp_word);
+                    if (m.find())
+                        new_word = m.group(1);
+                    alredy_on[count_word] = new_word;
+                    count_word++;
+                    break;
+                }
+            }
+        }
+        //
         int temp = (size%2 == 0) ? (size/2) : ((size/2) + 1); // номер строки
         for (i = 1; i < FIELD.length; i++)
             FIELD[temp][i] = start_word_ch[i-1];
@@ -90,7 +113,7 @@ class Field {
         make_field();
         for (int i = 0; i < FIELD.length; i++) {
             for (int j = 0; j < FIELD[i].length; j++) {
-                System.out.print(FIELD[i][j] + "\t");
+                System.out.print(FIELD[i][j] + "  ");
             }
             System.out.println();
         }
@@ -98,7 +121,7 @@ class Field {
     private static void show_field() {
         for (int i = 0; i < FIELD.length; i++) {
             for (int j = 0; j < FIELD[i].length; j++) {
-                System.out.print(FIELD[i][j] + "\t");
+                System.out.print(FIELD[i][j] + "  ");
             }
             System.out.println();
         }
@@ -112,17 +135,19 @@ class Field {
             String new_word = check_new_word();
             //System.out.println(new_word);
             if (!new_word.equals(" ")) {
-                System.out.println((char)27 + "[32mНа поле появилось новое слово: " + new_word + (char)27 + "[0m");
-                count_word ++;
+                System.out.println((char) 27 + "[32mНа поле появилось новое слово: " + new_word + (char) 27 + "[0m");
                 alredy_on[count_word] = new_word;
-                /*for (String str : alredy_on)
-                    System.out.println(str);*/
+                count_word++;
                 // добавляем все игроку
                 pl.inc_len_count(new_word);
-                System.out.println((char)27 + "[34m" + pl.getName() + (char)27 + "[0m, ваша суммарная длина слов на данный момент: "
-                        + (char)27 + "[33m" + pl.getLen_of_wds() + (char)27 + "[0m");
+                System.out.println((char) 27 + "[34m" + pl.getName() + (char) 27 + "[0m, ваша суммарная длина слов на данный момент: "
+                        + (char) 27 + "[33m" + pl.getLen_of_wds() + (char) 27 + "[0m");
+                if (pl.getCount_of_wds() == max_count_wd) { // если у кого-то лимит - конец игры!
+                    THE_END = true;
+                } else {
+                    check_end();
+                }
             }
-            check_end();
             resp = true;
         } else {
             System.out.println((char) 27 + "[31mВсе плохо, ничего не установилось" + (char)27 + "[0m" );
@@ -266,7 +291,9 @@ class Field {
 
         return resp;
     }
-    private static void check_end() { // выполняется проверка по всему полю после каждого хода - если заполнилось все поле, то выходим - НО ОНА ПОСЛЕ ПРОВЕРКИ НА СЛОВО
+    private static void check_end() {
+        // выполняется проверка по всему полю после каждого хода
+        // - если заполнилось все поле, то выходим - НО ОНА ПОСЛЕ ПРОВЕРКИ НА СЛОВО
         THE_END = true; // от противного
         for (int i = 1; i < FIELD.length; i ++) {
             for (int j = 1; j < FIELD.length; j++)
@@ -293,9 +320,9 @@ class Field {
         String new_word = " ";
         char[] temp_ch_ar = new char[MAX_LEN]; // на всякий случай..
         // обнуляем все переменные
-        for (char ch: temp_ch_ar)
-            ch = ' ';
-        
+        for (int a = 0; a < temp_ch_ar.length; a++) // обнуляем временный массив слова
+            temp_ch_ar[a] = ' ';
+
         boolean is_found = true;
         // проходимся по всему полю
         for (int i = 1; i < FIELD.length && is_found; i++) {
@@ -347,8 +374,6 @@ class Field {
 
             }
         }
-        // если не нашлось по вертикали - проверяем по горизонтали
-
 
         return new_word;
     }
@@ -360,11 +385,10 @@ class Field {
         Matcher m = p.matcher(word);
         if (m.find()) {
             word = m.group(1);
-            //System.out.println(word);
         }
         // проверяем, может такое слово уже есть на поле??
         boolean temp = false;
-        try { // NullPointer Exception можем словить. Надо исправить..
+        try { // можем словить Null Pointer Exception
             if (alredy_on != null) {
                 for (String str : alredy_on) {
                     if (!str.isEmpty() & str.equals(word)) {
@@ -381,18 +405,14 @@ class Field {
         if (!temp) {
             for (String str : words_arr) {
                 if (str.equals(word)) {
-                    //System.out.println("ДА!");
                     resp = true;
                     break;
                 }
             }
         }
 
-
         return resp;
     }
-
-
 }
 
 
@@ -413,7 +433,6 @@ class Random_Word {
                     break;
                 }
             }
-
         } catch (Exception e) {
             Handle_Exception.proc_ex(e);
         }
@@ -426,33 +445,34 @@ class Player {
     private String name;
     private int count_of_wds = 0;
     private int len_of_wds = 0;
-   // private  int[] curr_val = new int[2]; // на какое место добавил последний раз игроу [ 3, 2]
 
-    Player(String name) {
-        this.name = name;
+    Player(String name_pl) {
+        name = name_pl;
     }
 
     void inc_len_count(String cur_word) {
         this.len_of_wds += cur_word.length();
         this.count_of_wds ++;
     }
+
     int getCount_of_wds() {
         return this.count_of_wds;
     }
+
     int getLen_of_wds() {
         return this.len_of_wds;
     }
+
     String getName() { return this.name;}
 
-    /*void setCurr_val(int i, int j) {
-        curr_val[0] = i;
-        curr_val[1] = j;
+    @Override
+    public String toString() {
+        return (char)27 + "[34mPlayer {" +
+                "name='" + name + '\'' +
+                ", count_of_wds=" + count_of_wds +
+                ", len_of_wds=" + len_of_wds +
+                '}' + (char)27 + "[0m";
     }
-    int[] getCurr_val() {
-        return this.curr_val;
-    }
-*/
-
 }
 // класс - обработчик ошибок
 class Handle_Exception {
@@ -501,7 +521,7 @@ class Help {
         name = scan.nextLine();
         if (name.length() > 10) {
             System.out.println((char)27 + "[31mВы ввели слишком длинное имя. Попробуйте еще раз ;)" + (char)27 + "[0m");
-            set_name_pl(num);
+            name = set_name_pl(num);
         }
 
         return name;
@@ -513,12 +533,12 @@ class Help {
         name = scan.nextLine();
         if (name.length() > 10) {
             System.out.println((char)27 + "[31mВы ввели слишком длинное имя. Попробуйте еще раз ;)" + (char)27 + "[0m");
-            set_name_pl(num);
+            name = set_name_pl(num);
         }
         if (name.equals(name_1)) { // если имя второго игрока такое же как у первого - все плохо
             System.out.println((char)27 + "[31mВы ввели такое же имя, как и у первого игрока. Попробуйте еще раз ;)"
                     + (char)27 + "[0m");
-            set_name_pl(num, name_1);
+            name = set_name_pl(num, name_1);
         }
 
         return name;
@@ -533,7 +553,7 @@ class Help {
         System.out.print((char)27 + "[34m" + name_pl + (char)27 +
                 "[0m, пожалуйста, выберите поле, в которое вы хотите поставить букву (через пробел): ");
         param = scan.nextLine();
-        Pattern p = Pattern.compile("(\\w{2})(?:\\s+)([а-яА-Я])");
+        Pattern p = Pattern.compile("([А-Я]\\d)(?:\\s+)([а-яА-Я])");
         Matcher m = p.matcher(param);
         if (!m.find()) {
             System.out.println("Это что за набор символов? А ну-ка еще раз попробуй давай: ");
@@ -557,7 +577,7 @@ class Help {
 
     }
     private static boolean valid_param(String fld, String w) {
-        Pattern p1 = Pattern.compile("^[A-Z]\\d$");
+        Pattern p1 = Pattern.compile("^[А-Я]\\d$");
         Pattern p2 = Pattern.compile("^[а-яА-Я]$");
         Matcher m1 = p1.matcher(fld);
         Matcher m2 = p2.matcher(w);
@@ -574,6 +594,11 @@ class Help {
 
     static void the_end(Player pl1, Player pl2) {
         // проверка, кто победил...
-        System.out.println((char)27 + "[33mСпасибо. Игра закончена, победил игрок: " + (char)27 + "[0m");
+        System.out.println((char)27 + "[33m________________\r\nКОНЕЦ ИГРЫ" + (char)27 + "[0m");
+        System.out.println(pl1.toString() + pl2.toString());
+        Player winner = pl2;
+        if (pl1.getLen_of_wds() > pl2.getLen_of_wds())
+            winner = pl1;
+        System.out.println((char)27 + "[34mПобедил игрок: " + winner.getName() + (char)27 + "[0m");
     }
 }
