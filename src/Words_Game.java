@@ -11,16 +11,21 @@ public class Words_Game {
     public static void main (String args []) {
 
         // LET'S GO!
-        Help.help();
-        Player player1 = new Player(Help.set_name_pl(1));
-        Player player2 = new Player(Help.set_name_pl(2, player1.getName()));
-        Field.show_field_startonly();
-        while(!Field.get_status()) { // Event Loop
-            Help.set_val(player1);
-            if (!Field.get_status())
-                Help.set_val(player2);
+        Help control = new Help();
+        control.help();
+
+        Field fld = new Field(control.set_size_fld());
+
+        Player player1 = new Player(control.set_name_pl(1));
+        Player player2 = new Player(control.set_name_pl(2, player1.getName()));
+
+        fld.show_field_startonly(fld);
+        while(!fld.get_status()) { // Event Loop
+            control.set_val(player1, fld);
+            if (!fld.get_status())
+                control.set_val(player2, fld);
         }
-        Help.the_end(player1, player2);
+        control.the_end(player1, player2);
 
     }
 
@@ -28,8 +33,13 @@ public class Words_Game {
 
 class Word_List {
     private static String path_list = "/home/dmitry/IdeaProjects/Words_Game/src/word_rus.txt";
+    private String[] words_list;
 
-    private static List<String> get_list() {
+    // конструктор
+    public Word_List() {
+        words_list = get_list().stream().toArray(String[]::new);
+    }
+    private List<String> get_list() {
         List<String> words_list = new ArrayList<>();
 
         try (BufferedReader br = Files.newBufferedReader(Paths.get(path_list))) {
@@ -41,27 +51,30 @@ class Word_List {
 
         return words_list;
     }
-    static String[] get_arr_list() {
-        List<String> words_list = get_list();
-        String[] strings = words_list.stream().toArray(String[]::new);
 
-        return strings;
+    public String[] getWords_list() {
+        return words_list;
     }
-
 }
 
 class Field {
     private static boolean THE_END = false; // все поля заполнены ??
     private static int max_count_wd = 2;
-    private static int size = 9; // размер поля
-    private static char[][] FIELD = new char[size+1][size+1]; // создали само поле; +2 - чтобы вывести окантовку поля
-    private static char[] alfs = new char[size]; // здесь будут все буквы полей
+    private static int size; // размер поля
+    private static char[][] FIELD; // создали само поле; +2 - чтобы вывести окантовку поля
+    private static char[] alfs ; // здесь будут все буквы полей
     private static char def = ' '; // дефолнтно, чем заполняем
     private static String[] alredy_on  = new String [50]; // слова, которые уже есть на поле
-    private static String[] words_arr = Word_List.get_arr_list();
-    private static int MAX_LEN = get_max_len(); // длина максимального слова в словаре, чтобы не по всему полю бегать например
+    private static Word_List words_arr = new Word_List();
+    private static int MAX_LEN = 20; // длина максимального слова в словаре, чтобы не по всему полю бегать например
     private static int count_word = 0; // сколько слов введено уже
 
+
+    public Field(int size_f) {
+        size = size_f;
+        FIELD = new char[size+1][size+1];
+        alfs = new char[size];
+    }
     private static void make_field() {
         int i; // счетчик
         // окантовка поля
@@ -78,7 +91,7 @@ class Field {
             for (int j = 1; j < FIELD[i].length; j++)
                 FIELD[i][j] = def;
         }
-        String start_word = Random_Word.get_rnd_wrd(size);
+        String start_word = Random_Word.get_rnd_wrd(size, words_arr);
         alredy_on[0] = start_word;
         count_word++;
         char[] start_word_ch = start_word.toCharArray();
@@ -109,7 +122,7 @@ class Field {
         for (i = 1; i < FIELD.length; i++)
             FIELD[temp][i] = start_word_ch[i-1];
     }
-    static void show_field_startonly() { // функция вывода игрового поля
+    public void show_field_startonly(Field fld) { // функция вывода игрового поля
         make_field();
         for (int i = 0; i < FIELD.length; i++) {
             for (int j = 0; j < FIELD[i].length; j++) {
@@ -126,7 +139,7 @@ class Field {
             System.out.println();
         }
     }
-    static boolean set_field(String field, char w, Player pl) { // когда хотим поставить букву
+    public boolean set_field(String field, char w, Player pl) { // когда хотим поставить букву
         boolean resp = false;
         // СНАЧАЛА - ВАЛИДАЦИЯ ПОЛЕЙ, ЧТО ОНИ НЕ ЗАНЯТЫ!!!!!!!! И ТАКИЕ ПОЛЯ СУЩЕСТВУЮТ!!!!
         if (valid_param(field, w)) {
@@ -304,18 +317,10 @@ class Field {
 
     }
 
-    static boolean get_status() {
+    public boolean get_status() {
         return THE_END;
     }
-    // а нужно ли это вообще???...
-    private static int get_max_len() {
-        int max = 0;
-        for (String str: words_arr) {
-            if (str.length() > max)
-                max = str.length();
-        }
-        return max;
-    }
+    //
     private static String check_new_word() { // появились ли на поле новые слова
         String new_word = " ";
         char[] temp_ch_ar = new char[MAX_LEN]; // на всякий случай..
@@ -403,7 +408,7 @@ class Field {
         }
 
         if (!temp) {
-            for (String str : words_arr) {
+            for (String str : words_arr.getWords_list()) {
                 if (str.equals(word)) {
                     resp = true;
                     break;
@@ -417,15 +422,14 @@ class Field {
 
 
 class Random_Word {
-    static String get_rnd_wrd (int len) { // метод, возвращающий рандомное слово из списка
-        String[] strings = Word_List.get_arr_list();
+    static String get_rnd_wrd (int len, Word_List word_arr) { // метод, возвращающий рандомное слово из списка
         String rnd_word = " ";
 
         Random random = new Random();
         int num = 1 + random.nextInt(2000 - 1);
         int count = 0;
         try { // если вдруг слов с заданной длиной не будет совсем, то - выбросится исключение
-            for(String word : strings) {
+            for(String word : word_arr.getWords_list()) {
                 if (word.length() == len)
                     count++;
                 if (count == num) {
@@ -446,6 +450,7 @@ class Player {
     private int count_of_wds = 0;
     private int len_of_wds = 0;
 
+    // конструктор
     Player(String name_pl) {
         name = name_pl;
     }
@@ -455,15 +460,15 @@ class Player {
         this.count_of_wds ++;
     }
 
-    int getCount_of_wds() {
+    public int getCount_of_wds() {
         return this.count_of_wds;
     }
 
-    int getLen_of_wds() {
+    public int getLen_of_wds() {
         return this.len_of_wds;
     }
 
-    String getName() { return this.name;}
+    public String getName() { return this.name;}
 
     @Override
     public String toString() {
@@ -503,7 +508,7 @@ class Help {
     private static String path_help = "/home/dmitry/IdeaProjects/Words_Game/src/rules.txt";
     private static Scanner scan = new Scanner(System.in);
 
-    static void help() {
+    public void help() {
         try(FileReader fr = new FileReader(path_help)) {
             Scanner scan = new Scanner(fr);
             while (scan.hasNextLine()) {
@@ -514,19 +519,21 @@ class Help {
             Handle_Exception.proc_ex(e);
         }
     }
-    static String set_name_pl(int num) {
+    public String set_name_pl(int num) {
         String name = " ";
         System.out.print("Введите имя игрока " + num + " (не более 10 символов): ");
 
-        name = scan.nextLine();
-        if (name.length() > 10) {
+        if (scan.hasNextLine()) { name = scan.nextLine(); }
+        if (name.length() > 10 || name.equals("")) {
             System.out.println((char)27 + "[31mВы ввели слишком длинное имя. Попробуйте еще раз ;)" + (char)27 + "[0m");
             name = set_name_pl(num);
         }
 
         return name;
     }
-    static String set_name_pl(int num, String name_1) {
+    // перегружаем метод установки имя для второго игрока (для проверки, то нам не
+    // ввели такое же имя
+    public String set_name_pl(int num, String name_1) {
         String name = " ";
         System.out.print("Введите имя игрока " + num + " (не более 10 символов): ");
 
@@ -543,7 +550,7 @@ class Help {
 
         return name;
     }
-    static void set_val(Player pl) {
+    public void set_val(Player pl, Field FLD) {
         String name_pl = pl.getName();
         String param;
         String fld; // поле, куда хотим ввести
@@ -557,7 +564,7 @@ class Help {
         Matcher m = p.matcher(param);
         if (!m.find()) {
             System.out.println("Это что за набор символов? А ну-ка еще раз попробуй давай: ");
-            set_val(pl);
+            set_val(pl, FLD);
         } else {
             // разбираем параметры
             fld = m.group(1);
@@ -565,13 +572,13 @@ class Help {
             // проверяем параметры
             if (!valid_param(fld,w_str)) {
                 System.out.println("Ошибка в самих параметрах. А ну-ка еще раз попробуй давай: ");
-                set_val(pl);
+                set_val(pl, FLD);
             }
             char[] tmp = w_str.toCharArray();
             w = tmp[0];
             // устанавливаем значение в поле
-            if (!Field.set_field(fld,w,pl)) {
-                set_val(pl);
+            if (!FLD.set_field(fld,w,pl)) {
+                set_val(pl, FLD);
             }
         }
 
@@ -591,8 +598,21 @@ class Help {
             return false;
         }
     }
+    // установка размера поля
+    public int set_size_fld() {
+        int size_fld = 9; // по умолчанию
+        System.out.print((char)27 + "[32mПожалуйста, введите желаемый размер поля (не меньше 5, не больше 9): " +
+                (char)27 + "[0m");
+        if (scan.hasNextLine()) {
+            size_fld = Integer.parseInt(scan.nextLine());
+            if (size_fld > 9 | size_fld < 5) {
+                size_fld = set_size_fld();
+            }
+        }
+        return size_fld;
+    }
 
-    static void the_end(Player pl1, Player pl2) {
+    public void the_end(Player pl1, Player pl2) {
         // проверка, кто победил...
         System.out.println((char)27 + "[33m________________\r\nКОНЕЦ ИГРЫ" + (char)27 + "[0m");
         System.out.println(pl1.toString() + pl2.toString());
